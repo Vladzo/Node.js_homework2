@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello</title>
+</head>
+<body>
+    <h1>Hello {{user.name}}</h1>
+    <div>Your id: {{user.id}}</div>
+    <div>Your phone: {{user.phone}}</div>
+    <div>Your website: {{user.website}}</div>
+    <form action="/users" method="get">
+        <input type="submit" name="Submit" value="Go to all users">
+    </form>
+</body>
+</html>
