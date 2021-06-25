@@ -65,18 +65,11 @@ app.get('/register', (req, res) => {
 });
 
 app.post('/register', (req, res) => {
-    const {email, password, phone, website, name} = req.body;
+    const {email} = req.body;
 
     _getUsers().then(users => {
         const user = users.find(user => user.email === email);
-        const newUser = {
-            id: users.length + 1,
-            email,
-            name,
-            password,
-            phone,
-            website
-        };
+        const newUser =  {...req.body, id: users.length + 1};
 
         if (user) {
             res.render('error', {errorMassage: "This email address already exists"});
